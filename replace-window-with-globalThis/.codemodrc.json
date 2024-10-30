@@ -1,0 +1,23 @@
+{
+  "$schema": "https://codemod-utils.s3.us-west-1.amazonaws.com/configuration_schema.json",
+  "name": "replace window with globalThis",
+  "version": "1.0.0",
+  "engine": "workflow",
+  "private": false,
+  "arguments": [],
+  "meta": {
+    "tags": ["migration", "Deno", "window", "global-vars"],
+    "git": "https://github.com/codemod-com/codemod/tree/main/packages/codemods/deno/2/replace-window-with-globalThis"
+  },
+  "include": [
+    "**/*.js",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.jsx",
+    "**/*.cjs",
+    "**/*.mjs",
+    "**/*.es6",
+    "**/*.es"
+  ]
+}
+

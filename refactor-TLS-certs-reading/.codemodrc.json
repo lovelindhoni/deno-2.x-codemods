@@ -1,0 +1,13 @@
+{
+  "$schema": "https://codemod-utils.s3.us-west-1.amazonaws.com/configuration_schema.json",
+  "name": "Refactor TLS certificates reading.",
+  "version": "1.0.0",
+  "engine": "workflow",
+  "private": false,
+  "arguments": [],
+  "meta": {
+    "tags": ["migration", "Deno", "TLS", "certificates"],
+    "git": "https://github.com/codemod-com/codemod/tree/main/packages/codemods/deno/2/refactor-tls-certs-reading",
+  },
+  "include": ["**/*.js", "**/*.ts", "**/*.tsx", "**/*.jsx", "**/*.cjs", "**/*.mjs", "**/*.es6", "**/*.es"],
+}
