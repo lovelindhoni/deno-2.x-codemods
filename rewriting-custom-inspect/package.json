@@ -1,5 +1,5 @@
 {
-  "name": "custom-inspect",
+  "name": "rewriting-custom-inspect",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "20.9.0",

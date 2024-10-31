@@ -5,10 +5,12 @@ export async function workflow({ files }: Api) {
     .jsFam()
     .astGrep({
       rule: {
-        kind: "member_expression",
-        regex: "^Deno.customInspect$",
+        pattern: {
+          context: "import process from 'node:process'",
+          strictness: "relaxed",
+        },
       },
     })
-    .replace(`Symbol.for("Deno.customInspect")`);
+    .replace(" ");
 }
 

@@ -1,5 +1,5 @@
 {
-  "name": "stl-functions",
+  "name": "remove-node-process-import",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "20.9.0",

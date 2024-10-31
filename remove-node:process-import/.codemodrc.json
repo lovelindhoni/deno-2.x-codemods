@@ -1,13 +1,13 @@
 {
   "$schema": "https://codemod-utils.s3.us-west-1.amazonaws.com/configuration_schema.json",
-  "name": "import-std-types",
+  "name": "remove node:process import",
   "version": "1.0.0",
   "engine": "workflow",
   "private": false,
   "arguments": [],
   "meta": {
-    "tags": ["migration", "Deno", "I/O", "stl", "interfaces", "typescript"],
-    "git": "https://github.com/codemod-com/codemod/tree/main/packages/codemods/deno/2/import-std-types"
+    "tags": ["cleanup", "Deno", "global-vars", "nodejs", "imports"],
+    "git": "https://github.com/codemod-com/codemod/tree/main/packages/codemods/deno/2/remove-node:process-import"
   },
   "include": [
     "**/*.js",

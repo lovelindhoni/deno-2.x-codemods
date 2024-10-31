@@ -1,5 +1,5 @@
 {
-  "name": "isatty",
+  "name": "replace-window-with-globalThis",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "20.9.0",

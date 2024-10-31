@@ -1,5 +1,5 @@
 {
-  "name": "rename-deno-interfaces",
+  "name": "import-stl-types",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "20.9.0",

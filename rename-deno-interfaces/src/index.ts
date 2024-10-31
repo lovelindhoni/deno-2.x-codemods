@@ -17,7 +17,7 @@ export async function workflow({ files }: Api) {
 }
 
 async function updateFiles(oldInterface: string, newInterface: string, files: Api['files']) {
-  await files("**/*.{js, ts, tsx, jsx, cjs, mjs, es6, es}")
+  await files("**/*.{js,ts,tsx,jsx,cjs,mjs,es6,es}")
     .jsFam()
     .astGrep({
       rule: {

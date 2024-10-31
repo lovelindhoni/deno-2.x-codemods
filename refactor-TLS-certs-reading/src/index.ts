@@ -48,7 +48,7 @@ export async function workflow({ files }: Api) {
     for (const originalProp of tlsProperties) {
       const newProp = originalProp === "keyFile" ? "key" : "cert";
 
-      await files("**/*.{js, ts, tsx, jsx, cjs, mjs, es6, es}")
+      await files("**/*.{js,ts,tsx,jsx,cjs,mjs,es6,es}")
         .jsFam()
         .astGrep(buildQuery(originalProp, newProp, tlsMethod))
         .replace(({ getNode }) => {

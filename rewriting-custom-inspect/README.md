@@ -11,7 +11,8 @@ class Foo {
   [Deno.customInspect]() {
     return "This is Foo!";
   }
-}```
+}
+```
 
 ### After
 
@@ -21,5 +22,6 @@ class Foo {
   [Symbol.for("Deno.customInspect")]() {
     return "This is Foo!";
   }
-}```
+}
+```
 

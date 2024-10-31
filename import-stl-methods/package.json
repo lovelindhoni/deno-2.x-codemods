@@ -1,5 +1,5 @@
 {
-  "name": "old-interfaces",
+  "name": "import-stl-methods",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "20.9.0",

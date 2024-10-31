@@ -33,7 +33,7 @@ export async function workflow({ files, contexts }: Api) {
   for (const [denoMethod, replacementMethod] of Object.entries(
     methodMappings,
   )) {
-    await files("**/*.{js, ts, tsx, jsx, cjs, mjs, es6, es}")
+    await files("**/*.{js,ts,tsx,jsx,cjs,mjs,es6,es}")
       .jsFam()
       .astGrep(buildQuery(denoMethod))
       .replace(({ getNode }) => {

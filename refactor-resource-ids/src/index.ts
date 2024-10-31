@@ -24,20 +24,19 @@ const resourceMethodMappings: Record<string, string> = {
   writeSync: "writeSync",
   close: "close",
   shutdown: "closeWrite",
-  isatty: "isTerminal"
+  isatty: "isTerminal",
 };
 
 export async function workflow({ files }: Api) {
   for (const [oldMethod, newMethod] of Object.entries(resourceMethodMappings)) {
-    await files("**/*.{js, ts, tsx, jsx, cjs, mjs, es6, es}")
+    await files("**/*.{js,ts,tsx,jsx,cjs,mjs,es6,es}")
       .jsFam()
       .astGrep(buildQuery(oldMethod))
       .replace(({ getMatch, getMultipleMatches }) => {
-        const resourceObj = getMatch("A")?.text()
-        const restParams = getMultipleMatches("B").map((param) => param.text())
-        return transformResourceCall(resourceObj, restParams, newMethod)
-    }
-      );
+        const resourceObj = getMatch("A")?.text();
+        const restParams = getMultipleMatches("B").map((param) => param.text());
+        return transformResourceCall(resourceObj, restParams, newMethod);
+      });
   }
 }
 
@@ -50,13 +49,18 @@ const buildQuery = (oldMethod: string) => ({
 });
 
 // Transforms the call expression by renaming the method and adjusting parameters
-const transformResourceCall = ( resourceArg: string | undefined, additionalArgs : string[], newMethod: string
+const transformResourceCall = (
+  resourceArg: string | undefined,
+  additionalArgs: string[],
+  newMethod: string,
 ): string | undefined => {
   if (additionalArgs.length > 0) additionalArgs.shift(); // Remove the first comma if present
 
   if (resourceArg && resourceArg.endsWith(".rid")) {
-    const resourceObject = resourceArg.slice(0, resourceArg.lastIndexOf(".rid"));
+    const resourceObject = resourceArg.slice(
+      0,
+      resourceArg.lastIndexOf(".rid"),
+    );
     return `${resourceObject}.${newMethod}(${additionalArgs.join(", ")})`;
   }
 };
-

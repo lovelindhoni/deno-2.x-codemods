@@ -1,5 +1,5 @@
 {
-  "name": "tls-interfaces",
+  "name": "refactor-TLS-certs-reading",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "20.9.0",

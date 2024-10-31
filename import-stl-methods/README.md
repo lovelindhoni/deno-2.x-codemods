@@ -7,7 +7,8 @@ It also automatically adds the necessary import statements from the appropriate 
 function example() {
   const buffer = Deno.Buffer.from("Hello, World!");
   Deno.copy(source, destination);
-}```
+}
+```
 
 ### After
 

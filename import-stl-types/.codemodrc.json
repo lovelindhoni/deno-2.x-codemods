@@ -1,13 +1,13 @@
 {
   "$schema": "https://codemod-utils.s3.us-west-1.amazonaws.com/configuration_schema.json",
-  "name": "import-std-methods",
+  "name": "import stl types",
   "version": "1.0.0",
   "engine": "workflow",
   "private": false,
   "arguments": [],
   "meta": {
-    "tags": ["migration", "Deno", "file I/O", "I/O", "stl"],
-    "git": "https://github.com/codemod-com/codemod/tree/main/packages/codemods/deno/2/import-std-methods"
+    "tags": ["migration", "Deno", "I/O", "stl", "interfaces", "typescript"],
+    "git": "https://github.com/codemod-com/codemod/tree/main/packages/codemods/deno/2/import-stl-types"
   },
   "include": [
     "**/*.js",
@@ -20,3 +20,4 @@
     "**/*.es"
   ]
 }
+
