@@ -1,13 +1,22 @@
 {
   "$schema": "https://codemod-utils.s3.us-west-1.amazonaws.com/configuration_schema.json",
-  "name": "rewriting custom inspect",
+  "name": "rewriting-custom-inspect",
   "version": "1.0.0",
   "engine": "workflow",
   "private": false,
   "arguments": [],
   "meta": {
     "tags": ["migration", "Deno"],
-    "git": "https://github.com/codemod-com/codemod/tree/main/packages/codemods/deno/2/rewriting-custom-inspect",
+    "git": "https://github.com/codemod-com/codemod/tree/main/packages/codemods/deno/2/rewriting-custom-inspect"
   },
-  "include": ["**/*.js", "**/*.ts", "**/*.tsx", "**/*.jsx", "**/*.cjs", "**/*.mjs", "**/*.es6", "**/*.es"],
+  "include": [
+    "**/*.js",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.jsx",
+    "**/*.cjs",
+    "**/*.mjs",
+    "**/*.es6",
+    "**/*.es"
+  ]
 }

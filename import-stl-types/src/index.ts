@@ -29,12 +29,13 @@ export async function workflow({ files, contexts }: Api) {
 }
 
 // Constructs the AST query for locating specific Deno interfaces
-const buildQuery = (denoInterface: string) => ({
-  rule: {
-    kind: "nested_type_identifier",
-    regex: `^Deno.${denoInterface}$`,
-  },
-});
+const buildQuery = (denoInterface: string) => (
+`
+rule: 
+    kind: nested_type_identifier
+    regex: ^Deno.${denoInterface}$
+`
+);
 
 // Handles replacements by adding interface to imports if not already present
 const handleReplacement = (interfaceName: string, contexts: Api["contexts"]) => {

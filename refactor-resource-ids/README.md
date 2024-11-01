@@ -5,17 +5,19 @@ This codemod turns old Deno method calls that takes resource ID's as a argument 
 ### Before
 
 ```ts
-Deno.flock(resource.rid, ...args);
-Deno.fsyncSync(resource.rid);
-Deno.writeSync(resource.rid, data);
+Deno.flock(file1.rid, ...args);
+Deno.fsyncSync(file2.rid);
+Deno.writeSync(file3.rid, data);
+Deno.close(file.rid)
 ```
 
 ### After
 
 ```ts
-Deno.lock(resource.rid, ...args);
-Deno.syncSync(resource.rid);
-Deno.writeSync(resource.rid, data);
+file3.lock(...args)
+file2.syncSync();
+file3.writeSync(data);
+file.close()
 ```
 
 
@@ -23,26 +25,27 @@ Deno.writeSync(resource.rid, data);
 
 The following mappings are applied by the codemod:
 
-- `Deno.flock` → `Deno.lock`
-- `Deno.flockSync` → `Deno.lockSync`
-- `Deno.fsync` → `Deno.sync`
-- `Deno.fsyncSync` → `Deno.syncSync`
-- `Deno.ftruncate` → `Deno.truncate`
-- `Deno.ftruncateSync` → `Deno.truncateSync`
-- `Deno.funlock` → `Deno.unlock`
-- `Deno.funlockSync` → `Deno.unlockSync`
-- `Deno.fdatasync` → `Deno.syncData`
-- `Deno.fdatasyncSync` → `Deno.syncDataSync`
-- `Deno.futime` → `Deno.utime`
-- `Deno.futimeSync` → `Deno.utimeSync`
-- `Deno.fstat` → `Deno.stat`
-- `Deno.fstateSync` → `Deno.statSync`
-- `Deno.seek` → `Deno.seek`
-- `Deno.seekSync` → `Deno.seekSync`
-- `Deno.read` → `Deno.read`
-- `Deno.readSync` → `Deno.readSync`
-- `Deno.write` → `Deno.write`
-- `Deno.writeSync` → `Deno.writeSync`
-- `Deno.close` → `Deno.close`
-- `Deno.shutdown` → `Deno.closeWrite`
+- `Deno.flock` → `lock`
+- `Deno.flockSync` → `lockSync`
+- `Deno.fsync` → `sync`
+- `Deno.fsyncSync` → `syncSync`
+- `Deno.ftruncate` → `truncate`
+- `Deno.ftruncateSync` → `truncateSync`
+- `Deno.funlock` → `unlock`
+- `Deno.funlockSync` → `unlockSync`
+- `Deno.fdatasync` → `syncData`
+- `Deno.fdatasyncSync` → `syncDataSync`
+- `Deno.futime` → `utime`
+- `Deno.futimeSync` → `utimeSync`
+- `Deno.fstat` → `stat`
+- `Deno.fstateSync` → `statSync`
+- `Deno.seek` → `seek`
+- `Deno.seekSync` → `seekSync`
+- `Deno.read` → `read`
+- `Deno.readSync` → `readSync`
+- `Deno.write` → `write`
+- `Deno.writeSync` → `writeSync`
+- `Deno.close` → `close`
+- `Deno.shutdown` → `closeWrite`
+- `Deno.isatty` -> `isTerminal`,
 
