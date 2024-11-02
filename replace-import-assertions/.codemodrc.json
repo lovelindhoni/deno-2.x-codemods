@@ -1,0 +1,22 @@
+{
+  "$schema": "https://codemod-utils.s3.us-west-1.amazonaws.com/configuration_schema.json",
+  "name": "replace import assertions",
+  "version": "1.0.0",
+  "engine": "workflow",
+  "private": false,
+  "arguments": [],
+  "meta": {
+    "tags": ["deprecation", "imports", "javascript", "typescript"],
+    "git": "https://github.com/codemod-com/codemod/tree/main/packages/codemods/deno/2/replace-import-assertions"
+  },
+  "include": [
+    "**/*.js",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.jsx",
+    "**/*.cjs",
+    "**/*.mjs",
+    "**/*.es6",
+    "**/*.es"
+  ]
+}
