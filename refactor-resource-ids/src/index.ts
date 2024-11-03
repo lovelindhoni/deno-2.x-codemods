@@ -29,7 +29,7 @@ const resourceMethodMappings: Record<string, string> = {
 
 export async function workflow({ files }: Api) {
   for (const [oldMethod, newMethod] of Object.entries(resourceMethodMappings)) {
-    await files("**/*.{js,ts,tsx,jsx,cjs,mjs,es6,es}")
+    await files("**/*.{js,ts,tsx,jsx,cjs,mjs}")
       .jsFam()
       .astGrep(buildQuery(oldMethod))
       .replace(({ getMatch, getMultipleMatches }) => {

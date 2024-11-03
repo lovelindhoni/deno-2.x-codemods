@@ -17,7 +17,7 @@ const fileImports: Record<string, Set<string>> = {};
 
 export async function workflow({ files, contexts }: Api) {
   for (const denoInterface of denoInterfaces) {
-    await files("**/*.{js,ts,tsx,jsx,cjs,mjs,es6,es}")
+    await files("**/*.{js,ts,tsx,jsx,cjs,mjs}")
       .jsFam()
       .astGrep(buildQuery(denoInterface))
       .replace(() => handleReplacement(denoInterface, contexts));

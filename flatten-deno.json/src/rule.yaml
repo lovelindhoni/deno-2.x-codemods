@@ -1,0 +1,64 @@
+id: flatten-files-field
+language: json
+rule:
+    kind: pair
+    all:
+        - has:
+            field: key
+            pattern: '"files"'
+        - has:
+            field: value
+            kind: object
+            pattern: '{$$$CONTENTS}'
+        - inside:
+            kind: object
+            inside:
+                any:
+                    - kind: pair
+                      has:
+                        field: key
+                        pattern: '"lint"'
+                    - kind: pair
+                      has:
+                        field: key
+                        pattern: '"bench"'
+                    - kind: pair
+                      has:
+                        field: key
+                        pattern: '"fmt"'
+                    - kind: pair
+                      has:
+                        field: key
+                        pattern: '"test"'
+                inside:
+                    kind: object
+                    inside:
+                        kind: document
+fix: $$$CONTENTS
+
+---
+
+id: flatten-options-field
+language: json
+rule:
+    kind: pair
+    all:
+        - has:
+            field: key
+            pattern: '"options"'
+        - has:
+            field: value
+            kind: object
+            pattern: '{$$$CONTENTS}'
+        - inside:
+            kind: object
+            inside:
+                kind: pair
+                has:
+                    field: key
+                    pattern: '"fmt"'
+                inside:
+                    kind: object
+                    inside:
+                        kind: document
+fix: $$$CONTENTS
