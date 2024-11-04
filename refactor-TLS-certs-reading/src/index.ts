@@ -11,7 +11,11 @@ const parseKeyValue = (value: string): string => {
 };
 
 // Builds the AST query structure for the given property, replacement, and TLS method
-const buildQuery = (originalProp: string, newProp: string, tlsMethod: string) => ({
+const buildQuery = (
+  originalProp: string,
+  newProp: string,
+  tlsMethod: string,
+) => ({
   rule: {
     kind: "pair",
     has: {
@@ -25,7 +29,7 @@ const buildQuery = (originalProp: string, newProp: string, tlsMethod: string) =>
           kind: "pair",
           has: {
             kind: "property_identifier",
-            regex: `^${newProp}$`,
+            pattern: `${newProp}`,
           },
         },
       },
@@ -35,7 +39,7 @@ const buildQuery = (originalProp: string, newProp: string, tlsMethod: string) =>
           kind: "call_expression",
           has: {
             kind: "member_expression",
-            regex: `^${tlsMethod}$`,
+            pattern: `${tlsMethod}`,
           },
         },
       },
@@ -67,4 +71,3 @@ const formatKeyValuePair = (newProp: string, value: string): string => {
     ? `${newProp}: Deno.readTextFileSync(${value})`
     : `${newProp}: ${value}`;
 };
-

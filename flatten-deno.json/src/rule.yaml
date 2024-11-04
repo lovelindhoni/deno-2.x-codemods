@@ -17,19 +17,11 @@ rule:
                     - kind: pair
                       has:
                         field: key
-                        pattern: '"lint"'
-                    - kind: pair
-                      has:
-                        field: key
-                        pattern: '"bench"'
-                    - kind: pair
-                      has:
-                        field: key
-                        pattern: '"fmt"'
-                    - kind: pair
-                      has:
-                        field: key
-                        pattern: '"test"'
+                        any:
+                          - pattern: '"lint"'
+                          - pattern: '"bench"'
+                          - pattern: '"fmt"'
+                          - pattern: '"test"'
                 inside:
                     kind: object
                     inside:

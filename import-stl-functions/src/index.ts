@@ -44,7 +44,7 @@ export async function workflow({ files, contexts }: Api) {
           fileImports[currentFilePath] = new Set();
         }
 
-        // Add the replacement method to the file's imports
+        // Add the replacement function to the file's imports
         fileImports[currentFilePath].add(replacementMethod);
 
         return replacementMethod;
@@ -62,7 +62,7 @@ export async function workflow({ files, contexts }: Api) {
 const buildQuery = (denoMethod: string) => ({
   rule: {
     kind: "member_expression",
-    regex: `^Deno.${denoMethod}$`,
+    pattern: `Deno.${denoMethod}`,
   },
 });
 
@@ -70,7 +70,7 @@ const buildQuery = (denoMethod: string) => ({
 function generateImportStatements(methods: Set<string>): string {
   const moduleGroupedImports: Record<string, string[]> = {};
 
-  // Group methods by their module
+  // Group functions by their module
   for (const func of methods) {
     const module = methodToModule[func] as string;
     if (!moduleGroupedImports[module]) {

@@ -1,5 +1,5 @@
 {
-  "name": "import-stl-methods",
+  "name": "import-stl-functions",
   "license": "MIT",
   "devDependencies": {
     "@types/node": "20.9.0",

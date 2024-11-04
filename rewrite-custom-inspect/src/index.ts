@@ -6,7 +6,7 @@ export async function workflow({ files }: Api) {
     .astGrep({
       rule: {
         kind: "member_expression",
-        regex: "^Deno.customInspect$",
+        pattern: "Deno.customInspect",
       },
     })
     .replace(`Symbol.for("Deno.customInspect")`);

@@ -5,7 +5,7 @@ It also automatically adds the necessary import statements from the appropriate 
 
 ```ts
 function example() {
-  const buffer = Deno.Buffer.from("Hello, World!");
+  const buffer =  new Deno.Buffer();
   Deno.copy(source, destination);
 }
 ```
@@ -17,7 +17,7 @@ import { Buffer } from "jsr:@std/io/buffer";
 import { copy } from "jsr:@std/io/copy";
 
 function example() {
-  const buffer = Buffer.from("Hello, World!");
+  const buffer = new Buffer();
   copy(source, destination);
 }
 ```
