@@ -16,12 +16,5 @@
     ],
     "git": "https://github.com/codemod-com/codemod/tree/main/packages/codemods/deno/2/import-stl-types"
   },
-  "include": [
-    "**/*.js",
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.jsx",
-    "**/*.cjs",
-    "**/*.mjs"
-  ]
+  "include": ["**/*.ts", "**/*.tsx"]
 }

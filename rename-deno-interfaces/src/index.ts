@@ -23,7 +23,7 @@ async function updateFiles(
   newInterface: string,
   files: Api["files"],
 ) {
-  await files("**/*.{js,ts,tsx,jsx,cjs,mjs}")
+  await files("**/*.{ts,tsx}")
     .jsFam()
     .astGrep({
       rule: {

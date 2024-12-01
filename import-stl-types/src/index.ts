@@ -17,7 +17,7 @@ const fileImports: Record<string, Set<string>> = {};
 
 export async function workflow({ files, contexts }: Api) {
   for (const denoInterface of denoInterfaces) {
-    await files("**/*.{js,ts,tsx,jsx,cjs,mjs}")
+    await files("**/*.{ts,tsx}")
       .jsFam()
       .astGrep(buildQuery(denoInterface))
       .replace(() => handleReplacement(denoInterface, contexts));
@@ -29,16 +29,18 @@ export async function workflow({ files, contexts }: Api) {
 }
 
 // Constructs the AST query for locating specific Deno interfaces
-const buildQuery = (denoInterface: string) => (
-`
+const buildQuery = (denoInterface: string) =>
+  `
 rule: 
     kind: nested_type_identifier
     regex: ^Deno.${denoInterface}$
-`
-);
+`;
 
 // Handles replacements by adding interface to imports if not already present
-const handleReplacement = (interfaceName: string, contexts: Api["contexts"]) => {
+const handleReplacement = (
+  interfaceName: string,
+  contexts: Api["contexts"],
+) => {
   const fileKey = contexts.getFileContext().file;
 
   if (!fileImports[fileKey]) {
@@ -56,4 +58,3 @@ const addImportsToFile = (filePath: string, interfaces: string[]) => {
   const updatedContent = `${importLine}${fileContent}`;
   fs.writeFileSync(filePath, updatedContent, "utf-8");
 };
-
