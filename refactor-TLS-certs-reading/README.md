@@ -1,5 +1,7 @@
-This codemod updates the usage of TLS certificate loading in Deno by replacing deprecated properties with their new counterparts. 
-In Deno V2, loading certificates directly from files is now deprecated. Instead, you should read the certificates yourself.
+This codemod updates the usage of TLS certificate loading in Deno by replacing
+deprecated properties with their new counterparts. In Deno V2, loading
+certificates directly from files is now deprecated. Instead, you should read the
+certificates yourself.
 
 ### Before
 
@@ -26,4 +28,3 @@ const conn = await Deno.connectTls({
   key: Deno.readTextFileSync("./server.key"),
 });
 ```
-

@@ -1,7 +1,9 @@
 ## Deno Custom Inspect Codemod
-This codemod replaces occurrences of Deno.customInspect with Symbol.for("Deno.customInspect"). 
-This change aligns with the new standard for defining custom inspection behavior in Deno, providing better interoperability with JavaScript's built-in features.
 
+This codemod replaces occurrences of Deno.customInspect with
+Symbol.for("Deno.customInspect"). This change aligns with the new standard for
+defining custom inspection behavior in Deno, providing better interoperability
+with JavaScript's built-in features.
 
 ### Before
 
@@ -24,4 +26,3 @@ class Foo {
   }
 }
 ```
-

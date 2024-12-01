@@ -1,4 +1,5 @@
-This codemod renames Deno typscript interface names in your codebase to their new names. 
+This codemod renames Deno typscript interface names in your codebase to their
+new names.
 
 ### Before
 

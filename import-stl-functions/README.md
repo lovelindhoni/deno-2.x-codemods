@@ -1,11 +1,12 @@
-This codemod updates removed Deno function calls in Deno v2 to their new equivalents from the standard library
-It also automatically adds the necessary import statements from the appropriate modules.
+This codemod updates removed Deno function calls in Deno v2 to their new
+equivalents from the standard library It also automatically adds the necessary
+import statements from the appropriate modules.
 
 ### Before
 
 ```ts
 function example() {
-  const buffer =  new Deno.Buffer();
+  const buffer = new Deno.Buffer();
   Deno.copy(source, destination);
 }
 ```
@@ -21,6 +22,7 @@ function example() {
   copy(source, destination);
 }
 ```
+
 ### The following Deno functions are replaced:
 
 - `Deno.Buffer` → `Buffer`

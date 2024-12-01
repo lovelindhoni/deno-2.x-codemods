@@ -6,7 +6,14 @@
   "private": false,
   "arguments": [],
   "meta": {
-    "tags": ["migration", "Deno", "file I/O", "interfaces", "stl", "typescript"],
+    "tags": [
+      "migration",
+      "Deno",
+      "file I/O",
+      "interfaces",
+      "stl",
+      "typescript"
+    ],
     "git": "https://github.com/codemod-com/codemod/tree/main/packages/codemods/deno/2/import-stl-types"
   },
   "include": [

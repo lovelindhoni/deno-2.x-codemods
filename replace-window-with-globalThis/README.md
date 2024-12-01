@@ -1,4 +1,4 @@
-This codemod transforms instances of the `window` identifier into `globalThis`. 
+This codemod transforms instances of the `window` identifier into `globalThis`.
 
 ### Before
 
@@ -11,4 +11,3 @@ const value = window.location.href;
 ```ts
 const value = globalThis.location.href;
 ```
-

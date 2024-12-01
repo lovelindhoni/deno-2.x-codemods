@@ -1,6 +1,10 @@
-In Deno v2, resource IDs are being deprecated. Most users do not directly interact with resource IDs, so we are moving towards a model where resources are referenced by native JavaScript objects. This codemod automates the process of updating your code to align with this change.
+In Deno v2, resource IDs are being deprecated. Most users do not directly
+interact with resource IDs, so we are moving towards a model where resources are
+referenced by native JavaScript objects. This codemod automates the process of
+updating your code to align with this change.
 
-This codemod turns old Deno method calls that takes resource ID's as a argument to their new equivalents. 
+This codemod turns old Deno method calls that takes resource ID's as a argument
+to their new equivalents.
 
 ### Before
 
@@ -8,18 +12,17 @@ This codemod turns old Deno method calls that takes resource ID's as a argument 
 Deno.flock(file1.rid, ...args);
 Deno.fsyncSync(file2.rid);
 Deno.writeSync(file3.rid, data);
-Deno.close(file.rid)
+Deno.close(file.rid);
 ```
 
 ### After
 
 ```ts
-file3.lock(...args)
+file3.lock(...args);
 file2.syncSync();
 file3.writeSync(data);
-file.close()
+file.close();
 ```
-
 
 ### Method Mappings
 
@@ -48,4 +51,3 @@ The following mappings are applied by the codemod:
 - `Deno.close` → `close`
 - `Deno.shutdown` → `closeWrite`
 - `Deno.isatty` -> `isTerminal`,
-

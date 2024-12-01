@@ -1,4 +1,6 @@
-This codemod updates deprecated Deno typescript interfaces in your codebase. It automatically imports the necessary typscript interfaces from the standard library
+This codemod updates deprecated Deno typescript interfaces in your codebase. It
+automatically imports the necessary typscript interfaces from the standard
+library
 
 ### Before
 
